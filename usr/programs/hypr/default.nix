@@ -3,7 +3,6 @@
 {
   imports = [
     ./hypridle.nix
-    ./hyprlock.nix
     ./hyprland/autostart.nix
     ./hyprland/appearance.nix
     ./hyprland/keybinding.nix

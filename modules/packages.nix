@@ -79,8 +79,6 @@
     htop
     hypridle
     hyprland
-    hyprlock
-    hyprpaper
     hyprpicker
     hyprshot
     kitty
@@ -104,8 +102,6 @@
     rar
     ripgrep
     ripgrep-all
-    rofimoji
-    rofi
     samba
     sl
     slurp
@@ -139,7 +135,6 @@
     nwg-look
     pywal
     starship
-    waybar
     wlogout
 
     # Web Browsing

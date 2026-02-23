@@ -14,7 +14,7 @@
     package = pkgs.hypridle; # Or your preferred hypridle package
     settings = {
       general = {
-        lock_cmd = "${pkgs.hyprlock}/bin/hyprlock";           # Correct
+        lock_cmd = "noctalia-shell ipc call lockScreen lock";           # Correct
         unlock_cmd = "notify-send 'Screen Unlocked'";
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "notify-send 'Woke up!'";
@@ -30,7 +30,7 @@
         }
         {
           timeout = 600;
-          on-timeout = "${pkgs.hyprlock}/bin/hyprlock";
+          on-timeout = "noctalia-shell ipc call lockScreen lock";
         }
         {
           timeout = 900;

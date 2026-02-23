@@ -17,14 +17,14 @@
 
         "$mainMod, D, exec, noctalia-shell ipc call launcher toggle"
         "$mainMod, C, exec, rofi -show calc"
-        "$mainMod,Tab, exec, noctalia-shell ipc call launcher windows"
+        "ALT,Tab, exec, noctalia-shell ipc call launcher windows"
         "$mainMod, Y, exec, noctalia-shell ipc call launcher clipboard"
         "$mainMod, period, exec, noctalia-shell ipc call launcher emoji"
 
         # Hyprscrolling
-        "ALT, period, layoutmsg, focus r"
-        "ALT, comma, layoutmsg, focus l"
-        "ALT, R, layoutmsg, colresize +conf"
+        "$mainMod,Tab, layoutmsg, focus r"
+        "$mainMod+SHIFT,Tab, layoutmsg, focus l"
+        "$mainMod, R, layoutmsg, colresize +conf"
 
 
 

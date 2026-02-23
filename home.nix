@@ -208,6 +208,9 @@
             pv "$argv[1]" > "$argv[2]"
         end
 
+        function z
+            __zoxide_z $argv; and ls
+        end
 
         # Aliases
         alias rebuild='nixos_rebuild'

@@ -19,7 +19,7 @@
     home.file = {
 
     };
-    
+
 
     home.sessionVariables = {
         # EDITOR = "emacs";
@@ -247,7 +247,7 @@
         alias untar='tar -xvf'
         alias unbz2='tar -xvjf'
         alias ungz='tar -xvzf'
-        alias diskusage="nix-shell -p ncdu --run "ncdu /home"
+        alias diskusage='nix-shell -p ncdu --run "ncdu /"'
 
 
 
@@ -330,7 +330,7 @@
                 '';
         };
     };
-    
+
     xdg.enable = true;
     xdg.userDirs = {
         enable = true;
@@ -341,5 +341,5 @@
         ./usr/programs
         ./usr/core-system
     ];
-  
+
 }

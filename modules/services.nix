@@ -8,9 +8,11 @@
     displayManager.gdm.enable = false;
 
   };
-  
+
+  # Enable GNOME Keyring and PAM service (Needed) for login.
   services.gnome.gnome-keyring.enable = true;
-  
+  security.pam.services.login.enableGnomeKeyring = true;
+
   # Disable power-profiles-daemon.
   services.power-profiles-daemon.enable = false;
 
@@ -20,7 +22,7 @@
       enable = true;
       settings = {
         initial_session = {
-          # Change "Hyprland" to the command to run your window manager. 
+          # Change "Hyprland" to the command to run your window manager.
           command = "Hyprland";
           user = "peaceofsense";
         };
@@ -42,43 +44,43 @@
     # sessionPackages = [ pkgs.gnome.gnome-session.sessions ];
     sddm.enable = false;
   };
-  
+
   # Extra udev rules for i2c devices.
   services.udev.extraRules = ''
     KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
-  
+
   # X11 Keymap configuration.
   services.xserver.xkb = {
     layout = "de";
     variant = "";
   };
-  
+
   # Samba service configuration.
   services.samba = {
     enable = true;
   };
-  
+
   # Samba WS-Discovery Daemon configuration.
   services.samba-wsdd = {
     enable = true;
     openFirewall = true;
   };
-  
+
   # Mount, trash and other drive functionalites
   services.gvfs.enable = true;
-  
+
   # Interprocess communation system
   services.dbus.enable = true;
 
   # Thumbnail support for images
   services.tumbler.enable = true;
-  
+
   # CUPS for printing documents.
   services.printing.enable = true;
-  
+
   # Fix intel CPU throttling
-  services.throttled.enable = true;     
+  services.throttled.enable = true;
 
   # TLP for power management.
   services.tlp = {
@@ -94,17 +96,17 @@
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
     };
   };
-  
+
   # Enable xrdp service for remote desktop.
   services.xrdp = {
     enable = true;
     openFirewall = true;
   };
-  
+
   services.fwupd.enable = true;
-  
+
   services.blueman.enable = true;
-  
+
   services.solaar = {
     enable = true; # Enable the service
     package = pkgs.solaar; # The package to use
@@ -112,10 +114,10 @@
     batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
   };
-  
+
   # OpenSSH daemon (commented out, enable if needed).
   services.openssh.enable = true;
-  
+
   services.syncthing = {
     enable = true;
     user = "peaceofsense";
@@ -139,11 +141,11 @@
       };
     };
   };
-  
+
   #services.tailscale.enable = true;
-  
+
   services.flatpak.enable = true;
-  
+
   services.pulseaudio.enable = false;
 
   services.upower.enable = true;

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hyprland, ... }:
 
 {
   # Enable KDE Connect
@@ -12,11 +12,11 @@
   };
 
   # Enable adb (Android Debug Bridge)
-  programs.adb.enable = true; 
+  programs.adb.enable = true;
 
   # Install programs
   programs.firefox.enable = true;
-  
+
   # thunar
   programs.thunar.enable = false;
   programs.thunar.plugins = with pkgs.xfce; [
@@ -41,10 +41,10 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpacked
   ];
-  
+
   programs.virt-manager.enable = true;
-  
-  # Enable Steam 
+
+  # Enable Steam
   programs.steam = {
     enable = false;
     remotePlay.openFirewall = true;

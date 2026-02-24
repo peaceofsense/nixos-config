@@ -12,15 +12,12 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    plugins = [
-      pkgs.hyprlandPlugins.hyprscrolling
-    ];
 
     settings = {
       # Monitors
       monitor = [
         #"monitor = ,preferred,auto-up,1" # Uncomment for quick fix if needed
-        
+
         # Monitor left
         "DP-1,1920x1080,0x0,1"
         #"HDMI-A-2,1920x1080@60,0x0,1"
@@ -33,7 +30,7 @@
 
         #"eDP-1, 1920x1080, -1920x200, 1"
         # "DP-1, 1920x1080,1920x100, 1"
-        
+
         # Monitors top and bottom
         #"HDMI-A-2,2560x1440,0x0,1"
         #"eDP-1,1920x1080,320x1440,1"

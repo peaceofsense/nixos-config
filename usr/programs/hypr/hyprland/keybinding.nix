@@ -1,8 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Enable Hyprland for your user
   wayland.windowManager.hyprland = {
+    plugins = [
+      #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.scroller
+      pkgs.hyprlandPlugins.hyprscrolling
+    ];
     # Declarative Hyprland config as Nix attributes:
     settings = {
       # Keybindings
@@ -22,6 +26,7 @@
         "$mainMod, period, exec, noctalia-shell ipc call launcher emoji"
 
         # Hyprscrolling
+        #"$mainMod, Tab, layoutmsg, overview"
         "$mainMod,Tab, layoutmsg, focus r"
         "$mainMod+SHIFT,Tab, layoutmsg, focus l"
         "$mainMod, R, layoutmsg, colresize +conf"

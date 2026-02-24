@@ -6,7 +6,8 @@
     windowrulev2 = [
       "workspace 5, title:Spotify Premium"
       "workspace 1, class:(obsidian)"
-      "workspace 2, class:(zen)"
+      "workspace 2, class:(zen-beta)"
+      "workspace 4, class:(dev.zed.Zed)"
       #"workspace 2, class:(firefox)"
       "workspace 1, class:(steam)"
       # "float,class:^(kitty)$,title:^(kitty)$"

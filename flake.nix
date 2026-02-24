@@ -30,10 +30,9 @@
 
 
 
-    
   };
 
-  outputs = 
+  outputs =
   { self, nixpkgsStable, nixpkgsUnstable, home-manager, zen-browser, stylix, solaar, ... } @ inputs:
     let
       lib = nixpkgsStable.lib; # It is like pass nixpkgs to this var
@@ -56,7 +55,7 @@
               inherit inputs;
             };
             home-manager.users.peaceofsense = import ./home.nix;
-            
+
           }
 
           stylix.nixosModules.stylix
@@ -79,7 +78,7 @@
       peaceofsense = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          stylix.homeManagerModules.stylix 
+          stylix.homeManagerModules.stylix
           ./home.nix
           catppuccin.homeModules.catppuccin
         ];

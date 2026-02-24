@@ -138,8 +138,6 @@
     in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
 
-  xdg.portal.config.common.default = [ "gtk" ];
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -147,15 +145,28 @@
       xdg-desktop-portal-gtk
       #xdg-desktop-portal-wlr
     ];
+    config = {
+        common = {
+          default = [ "gtk" ];
+          "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+        };
+      };
   };
 
   # Enable automatic garbage collection
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d"; 
+    options = "--delete-older-than 7d";
   };
 
+  # Hyprland build cache for flake
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 
   # Polkit
   security.polkit.enable = true;

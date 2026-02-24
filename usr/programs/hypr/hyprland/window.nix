@@ -4,17 +4,17 @@
   wayland.windowManager.hyprland.settings = {
     # Window rules v2
     windowrulev2 = [
-      "workspace 10, title:Spotify Premium"
+      "workspace 5, title:Spotify Premium"
       "workspace 1, class:(obsidian)"
-      #"workspace 2, class:(zen)"
+      "workspace 2, class:(zen)"
       #"workspace 2, class:(firefox)"
-      "workspace 7, class:(steam)"
+      "workspace 1, class:(steam)"
       # "float,class:^(kitty)$,title:^(kitty)$"
       # "workspace 2 silent, initialClass:(firefox)"
       # "workspace 3 silent, class:(thunar)"
       # "workspace 9 silent, class:(Slack)"
       # "workspace 8 silent, class:(thunderbird)"
-      "float, class:(qalculate-gtk)"
+      "float, class:(org.pulseaudio.pavucontrol)"
       "float, class:(org.gnome.Characters)"
       "float, class:(xdg-desktop-portal-gtk)"
       "float, class:(org.gnome.Calculator)"

@@ -5,8 +5,7 @@
     settings = {
       # AUTOSTART
       exec-once = [
-        "[workspace 8 silent] thunderbird"
-        "hyprpaper"
+        "[workspace 5 silent] thunderbird"
         #"swaync" # notification
         #waybar
         # "hyprctl setcursor Bibata-Modern-Classic 24"

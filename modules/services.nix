@@ -77,9 +77,9 @@
   # CUPS for printing documents.
   services.printing.enable = true;
   
-  # Thermald for temperature management
-  services.thermald.enable = true;
-  
+  # Fix intel CPU throttling
+  services.throttled.enable = true;     
+
   # TLP for power management.
   services.tlp = {
     enable = true;

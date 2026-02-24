@@ -103,10 +103,15 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  # OpenGL
+  # OpenGL Graphics and Video Acceleration
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # Optimized for Kaby Lake R (T480) # remove when on AMD
+      intel-vaapi-driver # Fallback for older apps
+      libvdpau-va-gl     # Translation layer
+    ];
   };
 
   # Virtualization

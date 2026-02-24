@@ -22,7 +22,7 @@
         #"monitor = ,preferred,auto-up,1" # Uncomment for quick fix if needed
         
         # Monitor left
-        "DP-1,1920x1080@60,0x0,1"
+        "DP-1,1920x1080,0x0,1"
         #"HDMI-A-2,1920x1080@60,0x0,1"
         "eDP-1,1920x1080,1920x200,1.5"
 

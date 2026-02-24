@@ -247,6 +247,7 @@
         alias untar='tar -xvf'
         alias unbz2='tar -xvjf'
         alias ungz='tar -xvzf'
+        alias diskusage="nix-shell -p ncdu --run "ncdu /home"
 
 
 

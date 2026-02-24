@@ -150,9 +150,11 @@
   };
 
   # Enable automatic garbage collection
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly";  # Runs garbage collection weekly
-  nix.gc.options = "--delete-older-than 30d";
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d"; 
+  };
 
 
   # Polkit

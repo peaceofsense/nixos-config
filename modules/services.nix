@@ -16,29 +16,6 @@
   # Disable power-profiles-daemon.
   services.power-profiles-daemon.enable = false;
 
-  # Login
-  services = {
-    greetd = {
-      enable = true;
-      settings = {
-        initial_session = {
-          # Change "Hyprland" to the command to run your window manager.
-          command = "Hyprland";
-          user = "peaceofsense";
-        };
-
-        default_session = {
-          # Again here just change "-cmd Hyprland" to "-cmd your-start-command".
-          command = "${pkgs.tuigreet}/bin/tuigreet --asterisks --remember --remember-user-session --time --cmd Hyprland";
-          # DO NOT CHANGE THIS USER
-          user = "greeter";
-        };
-      };
-    };
-  };
-
-
-
   # Display Manager Settings.
   services.displayManager = {
     # sessionPackages = [ pkgs.gnome.gnome-session.sessions ];
@@ -80,7 +57,25 @@
   services.printing.enable = true;
 
   # Fix intel CPU throttling
-  services.throttled.enable = true;
+  services.throttled = {
+    enable = false;
+    extraConfig = ''
+      [GENERAL]
+      Enabled = true
+
+      [UNDERVOLT]
+      CORE = 0
+      CACHE = 0
+      GPU = 0
+
+      [POWER_LIMITS]
+      PL1_TDP = 25
+      PL2_TDP = 35
+      TRIP_TEMP = 90
+    '';
+  };
+
+
 
   # TLP for power management.
   services.tlp = {
@@ -90,10 +85,10 @@
       STOP_CHARGE_THRESH_BAT0 = "80";
       START_CHARGE_THRESH_BAT1 = "75";
       STOP_CHARGE_THRESH_BAT1 = "80";
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "balanced_performance";
     };
   };
 

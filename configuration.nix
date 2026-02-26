@@ -11,8 +11,10 @@
       ./modules/pipewire.nix
       ./modules/programs.nix
       ./modules/services.nix
+      ./modules/greetd.nix
       ./modules/users.nix
       ./modules/stylix.nix
+
     ];
 
   home-manager.backupFileExtension = "backup";
@@ -141,7 +143,7 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
+      #xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
       #xdg-desktop-portal-wlr
     ];

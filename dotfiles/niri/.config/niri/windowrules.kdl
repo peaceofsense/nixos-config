@@ -1,0 +1,105 @@
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+    draw-border-with-background false // Prevents border bleed
+}
+
+window-rule { // All window opacity
+    match is-active=false
+    opacity 0.98
+}
+
+window-rule {
+    match app-id=r#"^floating-kitty$"#
+    open-floating true
+    opacity 0.97
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
+}
+
+
+window-rule {
+    match app-id="obsidian"
+    match app-id="steam"
+    open-on-workspace "1"
+}
+
+window-rule {
+    match app-id="zen-beta"
+    open-maximized true
+    open-on-workspace "2"
+}
+
+window-rule {
+    // Regex matches "Zed" anywhere in the app-id
+    match app-id="dev.zed.Zed"
+    open-on-workspace "3"
+    open-maximized true
+
+}
+
+window-rule {
+    // Matches Spotify (Flatpak or Native)
+    match app-id=r#"spotify"#
+    match app-id=r#"thunderbird"#
+    open-maximized true
+    open-on-workspace "5"
+}
+
+window-rule { // POP-UPS
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="org.kde.kdeconnect.app"
+    match app-id="soffice"
+    match title="Calendar Reminders"
+    match title="File Operation Progress"
+
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+    min-width 400
+    min-height 600
+}
+
+/-window-rule { // File Progress Size
+    match title="File Operation Progress"
+    default-floating-width 600
+    default-floating-height 200
+}
+
+/-window-rule { // Zen Beta File Upload
+    match app-id="zen-beta" title="File Upload"
+    open-floating true
+    default-floating-width 1200
+    default-floating-height 800
+}
+
+window-rule { // Steam Fullscreen
+    match app-id="steam"
+    open-fullscreen true
+}
+
+window-rule { // PIP
+    match title="^Picture-in-Picture$"
+    open-floating true
+   // sticky true // 'sticky' in Niri keeps it visible even when you scroll the ribbon
+}
+
+window-rule { // block out two password managers from screen capture.
+    match app-id="proton-pass"
+    match app-id="Proton Pass"
+
+    match app-id="ente_auth"
+    match app-id="io.ente.auth"
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="org.gnome.Evince"
+    default-column-width { proportion 0.5; }
+    open-maximized false
+}

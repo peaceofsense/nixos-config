@@ -339,7 +339,6 @@
 
     imports = [
         ./usr/programs
-        ./usr/core-system
     ];
 
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, hyprland, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Enable KDE Connect
@@ -9,7 +9,10 @@
     enable = true;
     withUWSM = false; # Failed attempt to make it work
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
+
+  programs.niri.enable = true;
 
   # Enable adb (Android Debug Bridge)
   programs.adb.enable = true;

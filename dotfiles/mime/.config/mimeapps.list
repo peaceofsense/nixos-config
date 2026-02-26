@@ -1,0 +1,30 @@
+[Added Associations]
+
+[Default Applications]
+application/pdf=org.gnome.Evince.desktop
+application/x-extension-htm=zen-beta.desktop
+application/x-extension-html=zen-beta.desktop
+application/x-extension-shtml=zen-beta.desktop
+application/x-extension-xht=zen-beta.desktop
+application/x-extension-xhtml=zen-beta.desktop
+application/x-partial-download=vlc.desktop
+application/xhtml+xml=zen-beta.desktop
+image/gif=vlc.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+image/tiff=fiji.desktop
+image/webp=org.gnome.Loupe.desktop
+text/calendar=userapp-Thunderbird-WP7AU2.desktop
+text/html=zen-beta.desktop
+text/json=zeditor.desktop
+text/markdown=zeditor.desktop
+text/plain=zeditor.desktop
+video/mp4=vlc.desktop
+video/ogg=vlc.desktop
+video/webm=vlc.desktop
+video/x-matroska=vlc.desktop
+x-scheme-handler/chrome=zen-beta.desktop
+x-scheme-handler/http=zen-beta.desktop
+x-scheme-handler/https=zen-beta.desktop
+
+[Removed Associations]

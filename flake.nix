@@ -1,14 +1,13 @@
 {
-
   description = "yes";
 
   inputs = {
     nixpkgsStable.url = "nixpkgs/nixos-25.11"; # Change this to update version
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgsStable";
-
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -27,13 +26,17 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgsUnstable";
+    };
 
 
 
   };
 
   outputs =
-  { self, nixpkgsStable, nixpkgsUnstable, home-manager, zen-browser, stylix, solaar, ... } @ inputs:
+  { self, nixpkgsStable, nixpkgsUnstable, hyprland, nixos-hardware, home-manager, zen-browser, stylix, solaar, ... } @ inputs:
     let
       lib = nixpkgsStable.lib; # It is like pass nixpkgs to this var
       system = "x86_64-linux";
@@ -48,6 +51,7 @@
         inherit system;
         modules = [
           ./configuration.nix
+          nixos-hardware.nixosModules.lenovo-thinkpad-t480
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

@@ -1,0 +1,252 @@
+
+input {
+    keyboard {
+        xkb {
+            layout "de, us"
+        }
+        repeat-delay 200
+        repeat-rate 40
+        numlock // Enables numlock on startup
+    }
+
+    touchpad {
+        // off
+        tap
+        dwt // Disable while typing
+        dwtp // Disable while trackpointing
+        natural-scroll
+        accel-speed 0.2
+    }
+
+    mouse {
+        // off
+        accel-speed 0.2
+    }
+
+    trackpoint {
+        // off
+        accel-speed 0.2
+    }
+
+    // warp-mouse-to-focus // Move cursor to the new window
+
+    focus-follows-mouse max-scroll-amount="5%" // 0% to prevent overscrolling
+}
+
+output "eDP-1" {
+    mode "1920x1080@60.010" // $ niri msg outputs
+    scale 1.3
+    transform "normal" //Rotation: normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270
+    position x=1920 y=0
+}
+
+output "DP-1" {
+    mode "1920x1080@60.000" // $ niri msg outputs
+    scale 1
+    transform "normal" //Rotation: normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270
+    position x=0 y=0
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+layout {
+    gaps 6
+
+    center-focused-column "on-overflow" // New window in center (If only can be fit)
+
+    preset-column-widths { //"switch-preset-column-width" (Mod+R)
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+    }
+
+    default-column-width { proportion 0.5; } // For new window takes half a screen
+
+    focus-ring {
+        off
+        width 2
+
+        active-color "#45d108" // rgb, rgba, ##rrggbb, rgb-css, hsl
+
+        inactive-color "45475a"
+    }
+    border { // Border
+        //off
+        width 2
+
+       //active-color "#c20456" // rgb, rgba, ##rrggbb, rgb-css, hsl
+
+        inactive-color "45475a"
+
+       urgent-color "#f5c2e7"
+
+       active-gradient from="#80c8ff" to="#c7ff7f" angle=45        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    shadow {
+        on
+
+        softness 15
+        spread 5
+        offset x=0 y=3
+        color "#0009"
+    }
+
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 10
+    }
+
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 25
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    slowdown 0.5
+}
+
+// Window rules
+
+// workspace "scratchpad"
+// workspace "web"
+// workspace "code"
+// workspace "files"
+// workspace "miscellaneous"
+
+binds { // Mod = Super
+
+    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Mod+Return { spawn "kitty"; }
+    Mod+E { spawn "nemo"; }
+    Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+X { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Y { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Alt+Period { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+    Super+Shift+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    Mod+Escape repeat=false { toggle-overview; }
+
+    Mod+Shift+Q repeat=false { close-window; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+    Mod+W { toggle-column-tabbed-display; }
+
+
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Down  { move-window-down; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L     { move-column-right; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    Mod+Ctrl+Left  { focus-monitor-left; }
+    Mod+Ctrl+Down  { focus-monitor-down; }
+    Mod+Ctrl+Up    { focus-monitor-up; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+J     { focus-monitor-down; }
+    Mod+Ctrl+K     { focus-monitor-up; }
+    Mod+Ctrl+L     { focus-monitor-right; }
+
+
+    Mod+1 { focus-workspace "scratchpad"; }
+    Mod+2 { focus-workspace "web"; }
+    Mod+3 { focus-workspace "code"; }
+    Mod+4 { focus-workspace "files"; }
+    Mod+5 { focus-workspace "miscellaneous"; }
+
+    Mod+Shift+1 { move-column-to-workspace "scratchpad"; }
+    Mod+Shift+2 { move-column-to-workspace "web"; }
+    Mod+Shift+3 { move-column-to-workspace "code"; }
+    Mod+Shift+4 { move-column-to-workspace "files"; }
+    Mod+Shift+5 { move-column-to-workspace "miscellaneous"; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    Mod+C { center-column; }
+
+    Mod+Ctrl+C { center-visible-columns; }
+
+    // Move the focused window between the floating and the tiling layout.
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    Mod+Space       { switch-layout "next"; }  // Keyboard Layout
+
+    INSERT { screenshot; }
+    Ctrl+INSERT { screenshot-screen; }
+    Alt+INSERT { screenshot-window; }
+
+    Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; } //Virt-Man
+
+    // The quit action will show a confirmation dialog to avoid accidental exits.
+    Mod+Shift+E { quit; }
+    Ctrl+Alt+Delete { quit; }
+
+    Mod+Shift+P { power-off-monitors; }  // Powers off the monitors.
+}
+include "windowrules.kdl"
+include "env.kdl"
+include "startup.kdl"

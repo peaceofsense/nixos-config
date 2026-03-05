@@ -36,7 +36,7 @@
 
   # Kernel modules load
   # boot.extraModulePackages = [ config.boot.kernelModules.ddcci-driver ];
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" "v4l2loopback"]; # "i2c-dev" "ddcci_backlight"];
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" "v4l2loopback" "msr"]; # "i2c-dev" "ddcci_backlight"];
   boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 card_label="Virtual Webcam"

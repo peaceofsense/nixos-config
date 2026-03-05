@@ -33,19 +33,21 @@
         "preferredPlayer": "spotify",
         "visualizerType": "wave",
         "volumeFeedback": false,
+        "volumeFeedbackSoundFile": "",
         "volumeOverdrive": false,
         "volumeStep": 5
     },
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.9,
-        "barType": "simple",
+        "backgroundOpacity": 1,
+        "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 0.5,
+        "contentPadding": 0,
         "density": "default",
         "displayMode": "always_visible",
-        "floating": false,
+        "floating": true,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -53,9 +55,11 @@
         "marginHorizontal": 5,
         "marginVertical": 5,
         "monitors": [
+            "DP-1",
+            "eDP-1"
         ],
         "outerCorners": false,
-        "position": "top",
+        "position": "bottom",
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -87,7 +91,7 @@
                     "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
-                    "labelMode": "index",
+                    "labelMode": "name",
                     "occupiedColor": "secondary",
                     "pillSize": 0.7,
                     "showApplications": false,
@@ -125,7 +129,8 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "indicator-solaar"
+                        "indicator-solaar",
+                        "spotify-client"
                     ]
                 },
                 {
@@ -143,12 +148,12 @@
                     "textColor": "none"
                 },
                 {
-                    "compactMode": false,
+                    "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
                     "showCpuFreq": false,
-                    "showCpuTemp": true,
+                    "showCpuTemp": false,
                     "showCpuUsage": true,
                     "showDiskAvailable": false,
                     "showDiskUsage": false,
@@ -245,7 +250,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Ayu",
+        "predefinedScheme": "Nord",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -333,7 +338,8 @@
         "launcherIconColor": "none",
         "launcherPosition": "end",
         "monitors": [
-            "DP-1"
+            "DP-1",
+            "eDP-1"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
@@ -445,7 +451,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -648,18 +654,18 @@
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "recursive",
         "wallhavenApiKey": "",
-        "wallhavenCategories": "111",
-        "wallhavenOrder": "desc",
+        "wallhavenCategories": "110",
+        "wallhavenOrder": "asc",
         "wallhavenPurity": "100",
         "wallhavenQuery": "",
         "wallhavenRatios": "",
-        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionHeight": "1080",
         "wallhavenResolutionMode": "atleast",
-        "wallhavenResolutionWidth": "",
-        "wallhavenSorting": "date_added",
+        "wallhavenResolutionWidth": "1920",
+        "wallhavenSorting": "toplist",
         "wallpaperChangeMode": "random"
     }
 }

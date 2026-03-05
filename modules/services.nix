@@ -58,21 +58,7 @@
 
   # Fix intel CPU throttling
   services.throttled = {
-    enable = false;
-    extraConfig = ''
-      [GENERAL]
-      Enabled = true
-
-      [UNDERVOLT]
-      CORE = 0
-      CACHE = 0
-      GPU = 0
-
-      [POWER_LIMITS]
-      PL1_TDP = 25
-      PL2_TDP = 35
-      TRIP_TEMP = 90
-    '';
+    enable = true;
   };
 
 
@@ -106,7 +92,7 @@
     enable = true; # Enable the service
     package = pkgs.solaar; # The package to use
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+    batteryIcons = "solaar"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
   };
 

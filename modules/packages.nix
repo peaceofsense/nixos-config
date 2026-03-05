@@ -43,6 +43,7 @@
       texliveFull
       thunderbird
       #xournalpp
+      zathura
       zotero
 
       # Disk and Filesystem Utilities
@@ -94,6 +95,9 @@
       lm_sensors
       loupe
       nemo
+      (pkgs.writeShellScriptBin "nemo-float" ''
+        exec ${pkgs.nemo}/bin/nemo --app-id "nemo-float" "$@"
+      '')
       neovim
       networkmanager
       nix-search-tv

@@ -1,7 +1,7 @@
 [Added Associations]
 
 [Default Applications]
-application/pdf=org.gnome.Evince.desktop
+application/pdf=org.pwmt.zathura.desktop
 application/x-extension-htm=zen-beta.desktop
 application/x-extension-html=zen-beta.desktop
 application/x-extension-shtml=zen-beta.desktop

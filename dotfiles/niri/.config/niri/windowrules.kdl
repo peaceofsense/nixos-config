@@ -22,19 +22,20 @@ window-rule {
 window-rule {
     match app-id="obsidian"
     match app-id="steam"
-    open-on-workspace "1"
+    open-maximized true
+    open-on-workspace "scratchpad"
 }
 
 window-rule {
     match app-id="zen-beta"
     open-maximized true
-    open-on-workspace "2"
+    open-on-workspace "web"
 }
 
 window-rule {
     // Regex matches "Zed" anywhere in the app-id
     match app-id="dev.zed.Zed"
-    open-on-workspace "3"
+    open-on-workspace "code"
     open-maximized true
 
 }
@@ -44,7 +45,7 @@ window-rule {
     match app-id=r#"spotify"#
     match app-id=r#"thunderbird"#
     open-maximized true
-    open-on-workspace "5"
+    open-on-workspace "miscellaneous"
 }
 
 window-rule { // POP-UPS
@@ -102,4 +103,14 @@ window-rule {
     match app-id="org.gnome.Evince"
     default-column-width { proportion 0.5; }
     open-maximized false
+}
+
+window-rule {
+    match app-id=r#"^dot\.floating\.kitty$"#
+    match app-id=r#"^nemo-float$"#
+
+    open-floating true
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+
 }

@@ -15,17 +15,17 @@ input {
         dwt // Disable while typing
         dwtp // Disable while trackpointing
         natural-scroll
-        accel-speed 0.2
+        accel-speed 0.0
     }
 
     mouse {
         // off
-        accel-speed 0.2
+        accel-speed 0.0
     }
 
     trackpoint {
         // off
-        accel-speed 0.2
+        accel-speed 0.0
     }
 
     // warp-mouse-to-focus // Move cursor to the new window
@@ -37,7 +37,7 @@ output "eDP-1" {
     mode "1920x1080@60.010" // $ niri msg outputs
     scale 1.3
     transform "normal" //Rotation: normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270
-    position x=1920 y=0
+    position x=222 y=1080
 }
 
 output "DP-1" {
@@ -125,16 +125,44 @@ animations {
 // workspace "files"
 // workspace "miscellaneous"
 
+// Define your named workspaces and pin them to monitors
+workspace "scratchpad" {
+    open-on-output "DP-1"
+}
+
+workspace "web" {
+    open-on-output "DP-1"
+}
+
+workspace "code" {
+    open-on-output "DP-1"
+}
+
+workspace "files" {
+    open-on-output "eDP-1"
+}
+
+workspace "miscellaneous" {
+    open-on-output "eDP-1"
+}
+
+
 binds { // Mod = Super
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
+    Mod+Shift+Return { spawn "kitty" "--class=dot.floating.kitty"; }
     Mod+E { spawn "nemo"; }
+    Mod+Shift+E { spawn "nemo" "--class=nemo-float"; }
     Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+X { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+Y { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Alt+Period { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
     Super+Shift+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Shift+P { power-off-monitors; }  // Powers off the monitors.
+    Mod+Escape repeat=false { toggle-overview; }
+    Mod+Shift+Q repeat=false { close-window; }
+
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -148,10 +176,6 @@ binds { // Mod = Super
 
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-
-    Mod+Escape repeat=false { toggle-overview; }
-
-    Mod+Shift+Q repeat=false { close-window; }
 
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
@@ -205,7 +229,6 @@ binds { // Mod = Super
     Mod+Ctrl+K     { focus-monitor-up; }
     Mod+Ctrl+L     { focus-monitor-right; }
 
-
     Mod+1 { focus-workspace "scratchpad"; }
     Mod+2 { focus-workspace "web"; }
     Mod+3 { focus-workspace "code"; }
@@ -242,10 +265,9 @@ binds { // Mod = Super
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; } //Virt-Man
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    //Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    Mod+Shift+P { power-off-monitors; }  // Powers off the monitors.
 }
 include "windowrules.kdl"
 include "env.kdl"

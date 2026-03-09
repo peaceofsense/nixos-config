@@ -86,6 +86,7 @@ window-rule { // Steam Fullscreen
 window-rule { // PIP
     match title="^Picture-in-Picture$"
     open-floating true
+    opacity 1.0
    // sticky true // 'sticky' in Niri keeps it visible even when you scroll the ribbon
 }
 

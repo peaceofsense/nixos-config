@@ -77,15 +77,15 @@ layout {
     }
     border { // Border
         //off
-        width 2
+        width 3
 
-       //active-color "#c20456" // rgb, rgba, ##rrggbb, rgb-css, hsl
+       active-color "#c20456" // rgb, rgba, ##rrggbb, rgb-css, hsl
 
         inactive-color "45475a"
 
        urgent-color "#f5c2e7"
 
-       active-gradient from="#80c8ff" to="#c7ff7f" angle=45        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+       //active-gradient from="#80c8ff" to="#c7ff7f" angle=45        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     shadow {
@@ -107,13 +107,15 @@ layout {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Ice"
+    // xcursor-theme "Bibata-Modern-Ice"
+    xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 25
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
+    off
     slowdown 0.5
 }
 

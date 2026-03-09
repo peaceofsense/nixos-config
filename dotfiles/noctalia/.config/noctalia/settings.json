@@ -59,7 +59,7 @@
             "eDP-1"
         ],
         "outerCorners": false,
-        "position": "bottom",
+        "position": "top",
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -81,7 +81,7 @@
                     "useDistroLogo": true
                 },
                 {
-                    "characterCount": 2,
+                    "characterCount": 1,
                     "colorizeIcons": false,
                     "emptyColor": "secondary",
                     "enableScrollWheel": false,
@@ -116,6 +116,25 @@
                         "minimumThreshold": 10
                     },
                     "id": "plugin:catwalk"
+                },
+                {
+                    "compactMode": false,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 200,
+                    "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
+                    "scrollingMode": "always",
+                    "showAlbumArt": true,
+                    "showArtistFirst": false,
+                    "showProgressRing": true,
+                    "showVisualizer": false,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "linear"
                 }
             ],
             "right": [
@@ -245,14 +264,14 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Nord",
+        "predefinedScheme": "Vesper",
         "schedulingMode": "off",
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -637,7 +656,7 @@
         ],
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "monitorDirectories": [
         ],
         "overviewBlur": 0.4,
@@ -649,12 +668,12 @@
         "showHiddenFiles": false,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
-        "sortOrder": "name",
+        "sortOrder": "date_desc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "110",

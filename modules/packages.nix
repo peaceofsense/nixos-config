@@ -162,7 +162,7 @@
       tmux
 
       # Networking and Communication
-      discord
+      #discord
       #ferdium
       #fractal
       freerdp

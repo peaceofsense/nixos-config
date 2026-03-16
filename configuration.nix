@@ -13,7 +13,7 @@
       ./modules/services.nix
       ./modules/greetd.nix
       ./modules/users.nix
-      ./modules/stylix.nix
+      #./modules/stylix.nix
 
     ];
 

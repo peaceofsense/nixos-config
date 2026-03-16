@@ -9,7 +9,6 @@
     enable = true;
     withUWSM = false; # Failed attempt to make it work
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
   programs.niri.enable = true;

@@ -5,10 +5,7 @@
     nixpkgsStable.url = "nixpkgs/nixos-25.11"; # Change this to update version
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    stylix = {
-      url = "github:nix-community/stylix/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgsStable";
-    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgsStable";
@@ -22,27 +19,35 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgsStable";
     };
+    openlca-nix = {
+      url = "github:peaceofsense/openlca-nix";
+      inputs.nixpkgs.follows = "nixpkgsUnstable";
+    };
+        /*
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgsUnstable";
-    };
-
+*/
 
 
   };
 
   outputs =
-  { self, nixpkgsStable, nixpkgsUnstable, hyprland, nixos-hardware, home-manager, zen-browser, stylix, solaar, ... } @ inputs:
+  { self, nixpkgsStable, nixpkgsUnstable, nixos-hardware, home-manager, zen-browser, solaar, openlca-nix, ... } @ inputs:
     let
       lib = nixpkgsStable.lib; # It is like pass nixpkgs to this var
       system = "x86_64-linux";
       #lib-un = inputs.nixpkgUnstable.lib;
-      pkgs = nixpkgsStable.legacyPackages.${system};
-      pkgsUnstable = nixpkgsUnstable.legacyPackages.${system};
+      pkgs = import nixpkgsStable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      pkgsUnstable = import nixpkgsUnstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       username = "peaceofsense";
     in {
 
@@ -62,10 +67,12 @@
 
           }
 
-          stylix.nixosModules.stylix
           solaar.nixosModules.default
 
-          { environment.systemPackages = [ inputs.zen-browser.packages.${system}.default ]; }
+          { environment.systemPackages = [
+            inputs.zen-browser.packages.${system}.default
+            inputs.openlca-nix.packages.${system}.default
+          ]; }
 
         ];
 

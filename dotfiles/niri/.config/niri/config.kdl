@@ -40,6 +40,13 @@ output "eDP-1" {
     position x=222 y=1080
 }
 
+output "HDMI-A-2" {
+    mode "1920x1080@60.000" // $ niri msg outputs
+    scale 1
+    transform "normal" //Rotation: normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270
+    position x=0 y=0
+}
+
 output "DP-1" {
     mode "1920x1080@60.000" // $ niri msg outputs
     scale 1
@@ -54,7 +61,7 @@ gestures {
 }
 
 layout {
-    gaps 6
+    gaps 8
 
     center-focused-column "on-overflow" // New window in center (If only can be fit)
 
@@ -154,7 +161,7 @@ binds { // Mod = Super
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
     Mod+Shift+Return { spawn "kitty" "--class=dot.floating.kitty"; }
-    Mod+E { spawn "nemo"; }
+    Mod+E { spawn "nautilus"; }
     Mod+Shift+E { spawn "nemo" "--class=nemo-float"; }
     Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+X { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }

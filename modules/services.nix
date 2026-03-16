@@ -46,6 +46,7 @@
 
   # Mount, trash and other drive functionalites
   services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # Interprocess communation system
   services.dbus.enable = true;

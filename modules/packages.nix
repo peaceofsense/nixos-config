@@ -6,8 +6,11 @@
     (with pkgsUnstable; [
       # Unstable here
       yazi
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      noctalia-shell
+      #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       zed-editor
+      antigravity
+
 
 
     ])
@@ -15,7 +18,6 @@
     ++
 
     (with pkgs; [
-      alacritty
       niri
       xwayland-satellite
 
@@ -26,7 +28,7 @@
 
       # Office and Productivity
       blanket
-      fiji
+      #fiji
       gnome-clocks
       libreoffice-fresh
       localsend
@@ -34,11 +36,11 @@
       opentabletdriver
       pandoc
       pdfarranger
-      protonmail-desktop
-      rclone
-      rclone-ui
-      rnote libinput
-      slack
+      #protonmail-desktop
+      #rclone
+      #rclone-ui
+      #rnote libinput
+      #slack
       syncthing
       texliveFull
       thunderbird
@@ -80,6 +82,8 @@
       gsettings-desktop-schemas
       grim
       gvfs
+      libmtp
+      mtpfs
       gnome.gvfs
       htop
       hypridle
@@ -117,7 +121,7 @@
       sticky
       stow
       swappy
-      swaynotificationcenter
+      #swaynotificationcenter
       tealdeer
       trash-cli
       tree
@@ -150,7 +154,6 @@
       mullvad-browser
 
       # Development Tools
-      vscode
       conda
       gcc
       geany
@@ -166,14 +169,14 @@
       #ferdium
       #fractal
       freerdp
-      github-desktop
+      #github-desktop
       kdePackages.kdeconnect-kde
       openconnect
       rdesktop
       remmina
       wsdd
       #kdePackages.xwaylandvideobridge #x11 to wayland screensharing
-      zoom-us
+      #zoom-us
 
       # Multimedia
       ffmpeg-full

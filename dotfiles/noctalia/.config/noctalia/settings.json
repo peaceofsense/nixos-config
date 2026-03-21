@@ -134,18 +134,6 @@
             ],
             "right": [
                 {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Network",
-                    "textColor": "none"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Bluetooth",
-                    "textColor": "none"
-                },
-                {
                     "blacklist": [
                         "indicator-solaar"
                     ],
@@ -158,6 +146,18 @@
                         "indicator-solaar",
                         "spotify-client"
                     ]
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
                 },
                 {
                     "displayMode": "onhover",
@@ -269,12 +269,12 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "monochrome",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Peche",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -614,10 +614,6 @@
             },
             {
                 "enabled": true,
-                "id": "yazi"
-            },
-            {
-                "enabled": true,
                 "id": "zathura"
             },
             {
@@ -627,6 +623,10 @@
             {
                 "enabled": true,
                 "id": "zed"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
             }
         ],
         "enableUserTheming": false

@@ -134,7 +134,7 @@
       cliphist
       xclip
       xdg-utils
-      tailscale
+      #tailscale
       zip
       zoxide
 

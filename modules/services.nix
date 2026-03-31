@@ -115,7 +115,7 @@
 #    };
 #  };
 
-  services.tailscale.enable = true;
+  #services.tailscale.enable = true;
 
   services.flatpak.enable = true;
 

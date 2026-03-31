@@ -1,32 +1,6 @@
 { config, pkgs, ... }:
 
 {
-    home.username = "peaceofsense";
-    home.homeDirectory = "/home/peaceofsense";
-
-    # This value determines the Home Manager release that your configuration is
-    # compatible with. This helps avoid breakage when a new Home Manager release
-    # introduces backwards incompatible changes.
-
-    home.stateVersion = "25.05"; # Please read the comment before changing.
-
-    home.packages = [
-
-    ];
-
-    # Home Manager is pretty good at managing dotfiles. The primary way to manage
-    # plain files is through 'home.file'.
-    home.file = {
-
-    };
-
-
-    home.sessionVariables = {
-        # EDITOR = "emacs";
-    };
-
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
     programs.fish = {
         enable = true;
         # Fish shell initialization
@@ -97,9 +71,9 @@
 
 
         # NixOS rebuild function
-        function nixos_rebuild
+        function rebuild-monolith
             echo "Running nixos-rebuild switch..."
-            sudo nixos-rebuild switch --flake ~/nixos-config/
+            sudo nixos-rebuild switch --flake ~/nixos-config/#monolith
 
             if test $status -eq 0
                 echo "NixOS rebuilt successfully."
@@ -258,83 +232,8 @@
 
     };
 
-    programs.git = {
-        enable = true;
-
-        settings = {
-            user.email = "72244031+peaceofsense@users.noreply.github.com";
-            user.name = "peaceofsense";
-            "filter \"lfs\"".clean = "git-lfs clean -- %f";
-            "filter \"lfs\"".smudge = "git-lfs smudge -- %f";
-            "filter \"lfs\"".process = "git-lfs filter-process";
-            "filter \"lfs\"".required = "true";
-        };
-    };
-
-
-
     programs.zoxide = {
         enable = true;
         enableFishIntegration = true;
     };
-
-
-    qt = {
-        enable = true;
-    #  platformTheme.name = "kvantum";
-    #  style.package = pkgs.adwaita-qt;
-    #  style.name = "kvantum";
-
-    };
-    /*
-    home.pointerCursor = {
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
-        size = 24;
-        gtk.enable = true;
-    };
-    */
-    gtk = {
-        enable = true;
-
-
-        #font = {
-        #  name = "Inter";
-        #  package = pkgs.google-fonts.override {fonts = ["Inter"];};
-        #  size = 10;
-        #};
-
-        theme.package = pkgs.lib.mkForce pkgs.adw-gtk3;
-        theme.name = pkgs.lib.mkForce "adw-gtk3";
-        iconTheme.package = pkgs.papirus-icon-theme;
-        iconTheme.name = "Papirus-Dark";
-
-        cursorTheme = {
-              name = "Bibata-Modern-Classic";
-              package = pkgs.bibata-cursors;
-              size = 24;
-            };
-
-        gtk3.extraConfig = {
-            gtk-application-prefer-dark-theme = ''
-                1
-                '';
-        };
-        gtk4.extraConfig = {
-            gtk-application-prefer-dark-theme = ''
-                1
-                '';
-        };
-    };
-
-    xdg.enable = true;
-    xdg.userDirs = {
-        enable = true;
-        createDirectories = true;
-    };
-
-    imports = [
-        ./usr/programs
-    ];
-
 }

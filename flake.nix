@@ -50,7 +50,7 @@
       monolith = lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./hosts/monolith/configuration.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
 
           home-manager.nixosModules.home-manager {
@@ -58,7 +58,7 @@
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };
-            home-manager.users.peaceofsense = import ./home.nix;
+            home-manager.users.peaceofsense = import ./hosts/monolith/home.nix;
 
           }
 

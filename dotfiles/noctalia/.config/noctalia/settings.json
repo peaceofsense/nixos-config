@@ -648,7 +648,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/peaceofsense/nixos-config/modules/wallpapers",
+        "directory": "/home/peaceofsense/nixos-config/modules/system/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -673,7 +673,7 @@
         "transitionType": "random",
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "recursive",
+        "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "110",
         "wallhavenOrder": "asc",

@@ -5,15 +5,15 @@
 {
   imports =
     [
-      ./modules/hardware-configuration.nix
-      ./modules/fonts.nix
-      ./modules/packages.nix
-      ./modules/pipewire.nix
-      ./modules/programs.nix
-      ./modules/services.nix
-      ./modules/greetd.nix
-      ./modules/users.nix
-      #./modules/stylix.nix
+      ./hardware-configuration.nix
+      ../../modules/system/fonts.nix
+      ../../modules/system/packages.nix
+      ../../modules/system/pipewire.nix
+      ../../modules/system/programs.nix
+      ../../modules/system/services.nix
+      ../../modules/system/greetd.nix
+      ../../modules/system/users.nix
+      #../../modules/system/stylix.nix
 
     ];
 

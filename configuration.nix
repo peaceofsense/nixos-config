@@ -61,7 +61,27 @@
   networking.hostName = "monolith";
 
   # Network Configuration
-  networking.networkmanager.enable = true;
+  #networking.networkmanager.enable = true;
+
+  networking.networkmanager = {
+    enable = true;
+
+    wifi.scanRandMacAddress = true;  # random MAC while scanning
+  };
+
+  # Force random MAC for connections
+  environment.etc."NetworkManager/conf.d/00-mac-randomization.conf".text = ''
+    [device]
+    wifi.scan-rand-mac-address=yes
+
+    [connection-mac-randomization]
+    # Randomize MAC for every ethernet connection
+    ethernet.cloned-mac-address=random
+
+    # Generate a random MAC for each Wi-Fi and associate the two permanently.
+    wifi.cloned-mac-address=stable
+  '';
+
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # networking.proxy.default = "http://user:password@proxy:port/";  # Uncomment if needed
@@ -118,10 +138,12 @@
 
   # Virtualization
   users.groups.libvirtd.members = ["peaceofsense"];
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.libvirtd.enable = true;
+  # Enable this to virtualize
+  virtualisation.virtualbox.host.enable = false;
+  virtualisation.libvirtd.enable = false;
+
   virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = false;
 
 
   # Configure console keymap

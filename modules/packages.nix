@@ -7,10 +7,8 @@
       # Unstable here
       yazi
       noctalia-shell
-      #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       zed-editor
       antigravity
-
 
 
     ])
@@ -20,6 +18,8 @@
     (with pkgs; [
       niri
       xwayland-satellite
+      claude-code
+      claude-monitor
 
       # Dictionary
       hunspellDicts.en_GB-ise
@@ -134,6 +134,7 @@
       cliphist
       xclip
       xdg-utils
+      tailscale
       zip
       zoxide
 
@@ -215,6 +216,7 @@
       cmatrix
       cowsay
       #mangohud
+      solaar
       wttrbar
       dotnet-runtime
       #lutris

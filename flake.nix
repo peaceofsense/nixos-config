@@ -10,11 +10,6 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgsStable";
     };
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
-      inputs.nixpkgs.follows = "nixpkgsStable";
-    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgsStable";
@@ -34,7 +29,7 @@
   };
 
   outputs =
-  { self, nixpkgsStable, nixpkgsUnstable, nixos-hardware, home-manager, zen-browser, solaar, openlca-nix, ... } @ inputs:
+  { self, nixpkgsStable, nixpkgsUnstable, nixos-hardware, home-manager, zen-browser, openlca-nix, ... } @ inputs:
     let
       lib = nixpkgsStable.lib; # It is like pass nixpkgs to this var
       system = "x86_64-linux";
@@ -66,8 +61,6 @@
             home-manager.users.peaceofsense = import ./home.nix;
 
           }
-
-          solaar.nixosModules.default
 
           { environment.systemPackages = [
             inputs.zen-browser.packages.${system}.default

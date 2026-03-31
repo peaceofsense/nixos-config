@@ -269,12 +269,12 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": false,
+        "darkMode": true,
         "generationMethod": "monochrome",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Catppuccin",
+        "predefinedScheme": "Catppuccin Lavender",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -672,7 +672,7 @@
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "110",

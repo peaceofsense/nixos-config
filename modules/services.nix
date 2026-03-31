@@ -62,8 +62,6 @@
     enable = true;
   };
 
-
-
   # TLP for power management.
   services.tlp = {
     enable = true;
@@ -89,42 +87,35 @@
 
   services.blueman.enable = true;
 
-  services.solaar = {
-    enable = true; # Enable the service
-    package = pkgs.solaar; # The package to use
-    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "solaar"; # Which battery icons to use (*regular*, symbolic, solaar)
-    extraArgs = ""; # Extra arguments to pass to solaar on startup
-  };
-
   # OpenSSH daemon (commented out, enable if needed).
   services.openssh.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    user = "peaceofsense";
-    openDefaultPorts = true;
-    dataDir = "/home/peaceofsense/Documents";
-    configDir = "/home/peaceofsense/.config/syncthing";
-    overrideDevices = true;
-    overrideFolders = true;
-    settings = {
-      devices = {
-        "android" = { id = "ZQ6VMEA-MAK25XR-JU6NIRF-D45J2SZ-G477RYW-F4Y7YYM-N5UKLVG-TRTFRAN"; };
-      };
-      folders = {
-        "vault" = {
-          path = "/home/peaceofsense/Documents/vault";
-          devices = [ "android" ];
-          type = "sendonly";
-          rescanIntervals = 900;
-          ignorePerms = false;
-        };
-      };
-    };
-  };
 
-  #services.tailscale.enable = true;
+#  services.syncthing = {
+#    enable = true;
+#    user = "peaceofsense";
+#    openDefaultPorts = true;
+#    dataDir = "/home/peaceofsense/Documents";
+#    configDir = "/home/peaceofsense/.config/syncthing";
+#    overrideDevices = true;
+#    overrideFolders = true;
+#    settings = {
+#      devices = {
+#        "android" = { id = "ZQ6VMEA-MAK25XR-JU6NIRF-D45J2SZ-G477RYW-F4Y7YYM-N5UKLVG-TRTFRAN"; };
+#      };
+#      folders = {
+#        "vault" = {
+#          path = "/home/peaceofsense/Documents/vault";
+#          devices = [ "android" ];
+#          type = "sendonly";
+#          rescanIntervals = 900;
+#          ignorePerms = false;
+#        };
+#      };
+#    };
+#  };
+
+  services.tailscale.enable = true;
 
   services.flatpak.enable = true;
 

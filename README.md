@@ -2,8 +2,6 @@
 
 Personal NixOS configuration using Nix Flakes and Home Manager.
 
-![System Preview](image.png)
-
 ## Overview
 
 - **Host**: `monolith` (T480)

@@ -89,7 +89,7 @@
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 3389 18080 37889 18089];
+  networking.firewall.allowedTCPPorts = [ ]; # 3389 18080 37889 18089];
   # networking.firewall.allowedUDPPorts = pkgs.lib.range 1714 1764; # Full KDE Connect range
 
   # Hardware Configuration
@@ -167,13 +167,13 @@
     extraPortals = with pkgs; [
       #xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
-      #xdg-desktop-portal-wlr
+      xdg-desktop-portal-wlr
     ];
     config = {
         common = {
           default = [ "gtk" ];
-          "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
-          "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+          #"org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+          #"org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
         };
       };
   };

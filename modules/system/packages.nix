@@ -98,7 +98,6 @@
       libtiff
       lm_sensors
       loupe
-      nemo
       (pkgs.writeShellScriptBin "nemo-float" ''
         exec ${pkgs.nemo}/bin/nemo --app-id "nemo-float" "$@"
       '')
@@ -123,6 +122,7 @@
       swappy
       #swaynotificationcenter
       tealdeer
+      xfce.thunar
       trash-cli
       tree
       unrar

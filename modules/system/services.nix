@@ -88,7 +88,16 @@
   services.blueman.enable = true;
 
   # OpenSSH daemon (commented out, enable if needed).
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;  # Only SSH keys if false
+      PermitRootLogin = "no";          # No root login
+      KbdInteractiveAuthentication = false;
+    };
+    # Optional: Restrict to specific users
+    # allowUsers = [ "peaceofsense" ];
+  };
 
 
 #  services.syncthing = {

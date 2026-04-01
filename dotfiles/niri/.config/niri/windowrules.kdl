@@ -23,7 +23,7 @@ window-rule {
     match app-id="obsidian"
     match app-id="steam"
     open-maximized true
-    open-on-workspace "scratchpad"
+    open-on-workspace "scratch"
 }
 
 window-rule {
@@ -45,7 +45,7 @@ window-rule {
     match app-id=r#"spotify"#
     match app-id=r#"thunderbird"#
     open-maximized true
-    open-on-workspace "miscellaneous"
+    open-on-workspace "misc"
 }
 
 window-rule { // POP-UPS

@@ -83,12 +83,12 @@ layout {
         inactive-color "45475a"
     }
     border { // Border
-        //off
+        off
         width 3
 
        active-color "#c20456" // rgb, rgba, ##rrggbb, rgb-css, hsl
 
-        inactive-color "45475a"
+       inactive-color "#242424"
 
        urgent-color "#f5c2e7"
 
@@ -134,24 +134,19 @@ animations {
 // workspace "files"
 // workspace "miscellaneous"
 
-// Define your named workspaces and pin them to monitors
-workspace "scratchpad" {
-    open-on-output "DP-1"
+workspace "scratch" {
+    open-on-output "eDP-1"
 }
-
 workspace "web" {
     open-on-output "DP-1"
 }
-
 workspace "code" {
-    open-on-output "DP-1"
+    open-on-output "eDP-1"
 }
-
 workspace "files" {
     open-on-output "eDP-1"
 }
-
-workspace "miscellaneous" {
+workspace "misc" {
     open-on-output "eDP-1"
 }
 
@@ -161,7 +156,7 @@ binds { // Mod = Super
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
     Mod+Shift+Return { spawn "kitty" "--class=dot.floating.kitty"; }
-    Mod+E { spawn "nautilus"; }
+    Mod+E { spawn "thunar"; }
     Mod+Shift+E { spawn "nemo" "--class=nemo-float"; }
     Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+X { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }

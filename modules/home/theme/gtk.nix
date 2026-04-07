@@ -28,8 +28,9 @@
 
         theme.package = pkgs.lib.mkForce pkgs.adw-gtk3;
         theme.name = pkgs.lib.mkForce "adw-gtk3";
-        iconTheme.package = pkgs.papirus-icon-theme;
-        iconTheme.name = "Papirus-Dark";
+      #  iconTheme.package = pkgs.papirus-icon-theme;
+        iconTheme.package = pkgs.tela-circle-icon-theme;
+        iconTheme.name = "Tela-circle";
 
         cursorTheme = {
               name = "Bibata-Modern-Classic";

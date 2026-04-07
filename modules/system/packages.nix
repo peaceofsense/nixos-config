@@ -192,7 +192,7 @@
       playerctl
       pavucontrol
       scrcpy
-      spotify
+      spotify-player
       vlc
 
       # Virtualisation

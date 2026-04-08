@@ -9,6 +9,8 @@
       noctalia-shell
       zed-editor
       antigravity
+      hyprland
+
 
 
     ])
@@ -69,6 +71,7 @@
       ddcui
       fastfetch
       feh
+      file-roller
       fish
       font-manager
       fzf
@@ -87,7 +90,6 @@
       gnome.gvfs
       htop
       hypridle
-      hyprland
       hyprpicker
       hyprshot
       kitty
@@ -132,6 +134,7 @@
       wl-clipboard
       wlsunset
       cliphist
+      xarchiver
       xclip
       xdg-utils
       #tailscale

@@ -4,7 +4,7 @@ let
     #!/bin/sh
 
     # Set the vault directory
-    VAULT_DIR="$HOME/my-files/TH25"
+    VAULT_DIR="$HOME/my-files/05-knowledge/TH25"
 
     # Change to the vault directory, exit if it doesn't exist
     cd "$VAULT_DIR" || { echo "Error: Vault directory $VAULT_DIR not found." >&2; exit 1; }

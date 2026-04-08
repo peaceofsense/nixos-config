@@ -717,7 +717,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/peaceofsense/my-files/wallpapers",
+        "directory": "/home/peaceofsense/my-files/06-media/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -727,12 +727,12 @@
         "hideWallpaperFilenames": true,
         "monitorDirectories": [
             {
-                "directory": "/home/peaceofsense/my-files/wallpapers",
+                "directory": "/home/peaceofsense/my-files/06-media/wallpapers",
                 "name": "DP-1",
                 "wallpaper": ""
             },
             {
-                "directory": "/home/peaceofsense/my-files/wallpapers",
+                "directory": "/home/peaceofsense/my-files/06-media/wallpapers",
                 "name": "eDP-1",
                 "wallpaper": ""
             }

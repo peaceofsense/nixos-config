@@ -89,7 +89,8 @@
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ ]; # 3389 18080 37889 18089];
+  networking.firewall.allowedTCPPorts = [ 53317 ]; # 3389 18080 37889 18089]; 53317 - LocalSend
+  networking.firewall.allowedUDPPorts = [ 53317 ];
   # networking.firewall.allowedUDPPorts = pkgs.lib.range 1714 1764; # Full KDE Connect range
 
   # Hardware Configuration

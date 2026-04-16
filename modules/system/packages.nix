@@ -35,6 +35,7 @@
       libreoffice-fresh
       localsend
       obsidian
+      onlyoffice-desktopeditors
       opentabletdriver
       pandoc
       pdfarranger

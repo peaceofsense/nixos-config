@@ -1,0 +1,14 @@
+dotfiles/noctalia/.config/noctalia/colors.json
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/Main.qml
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/Panel.qml
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/Settings.qml
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/i18n/de.json
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/i18n/en.json
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/i18n/fr.json
+dotfiles/noctalia/.config/noctalia/plugins/privacy-indicator/manifest.json
+dotfiles/noctalia/.config/noctalia/plugins/tailscale/Main.qml
+dotfiles/noctalia/.config/noctalia/plugins/tailscale/README.md
+dotfiles/noctalia/.config/noctalia/plugins/tailscale/manifest.json
+dotfiles/noctalia/.config/noctalia/settings.json
+flake.lock
+modules/system/packages.nix

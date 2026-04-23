@@ -69,7 +69,7 @@ DraggableDesktopWidget {
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: Style.marginL
+            anchors.margins: Style.marginS
             spacing: Style.marginS
 
             NText {

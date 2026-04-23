@@ -1,0 +1,15 @@
+{
+  "menu": {
+    "settings": "Widget Ayarları",
+    "title": "Takvim Seçenekleri"
+  },
+  "notifications": {
+    "save-error": "Kaydedilemedi",
+    "saved": "Ayar başarıyla kaydedildi"
+  },
+  "settings": {
+      "text": "Haftanın başladığı gün ",
+      "day1": "Pazar",
+      "day2": "Pazartesi"
+  } 
+}

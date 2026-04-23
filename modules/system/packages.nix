@@ -191,12 +191,12 @@
       kooha
       libheif
       libraw
+      ncspot
       nufraw
       obs-studio
       playerctl
       pavucontrol
       scrcpy
-      spotify-player
       vlc
 
       # Virtualisation

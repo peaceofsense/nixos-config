@@ -27,6 +27,35 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
+    programs.ncspot = {
+      enable = true;
+      settings = {
+        shuffle = false;
+        gapless = true;
+        notify = true;
+        use_nerdfont = true;
+        backend = "pulseaudio";
+        theme = {
+          background = "black";
+          primary = "light white";
+          secondary = "light black";
+          title = "light green";
+          playing = "light green";
+          playing_selected = "light yellow";
+          playing_bg = "black";
+          highlight = "light white";
+          highlight_bg = "#383838";
+          error = "light white";
+          error_bg = "red";
+          statusbar = "black";
+          statusbar_progress = "light green";
+          statusbar_bg = "light green";
+          cmdline = "light white";
+          cmdline_bg = "black";
+        };
+      };
+    };
+
     imports = [
         ../../modules/home/programs
         ../../modules/home/shell/fish.nix

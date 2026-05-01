@@ -85,6 +85,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "/home/peaceofsense/nixos-config/modules/wallpapers/nix-snowflake-colours.svg",
                     "enableColorization": false,
                     "icon": "",

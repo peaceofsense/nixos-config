@@ -8,7 +8,6 @@
       yazi
       noctalia-shell
       zed-editor
-      antigravity
       hyprland
 
 

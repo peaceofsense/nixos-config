@@ -18,18 +18,16 @@
       url = "github:peaceofsense/openlca-nix";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
-        /*
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
-*/
 
 
   };
 
   outputs =
-  { self, nixpkgsStable, nixpkgsUnstable, nixos-hardware, home-manager, zen-browser, openlca-nix, ... } @ inputs:
+  { self, nixpkgsStable, nixpkgsUnstable, nixos-hardware, home-manager, zen-browser, openlca-nix, dms, ... } @ inputs:
     let
       lib = nixpkgsStable.lib; # It is like pass nixpkgs to this var
       system = "x86_64-linux";
@@ -52,6 +50,8 @@
         modules = [
           ./hosts/monolith/configuration.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
+          dms.nixosModules.dank-material-shell
+          { nixpkgs.overlays = [ (final: prev: { dgop = pkgsUnstable.dgop; }) ]; } # Needed for DMS
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

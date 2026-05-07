@@ -9,6 +9,8 @@
       noctalia-shell
       zed-editor
       hyprland
+      vicinae
+
 
 
 
@@ -21,6 +23,12 @@
       xwayland-satellite
       claude-code
       claude-monitor
+
+      # Games
+      pysolfc
+      gnome-sudoku
+      gnome-mahjongg
+      gnome-mines
 
       # Dictionary
       hunspellDicts.en_GB-ise

@@ -173,6 +173,7 @@ binds { // Mod = Super
     // Mod+Y { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     // Alt+Period { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
     // Super+Shift+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Space { spawn "vicinae" "toggle"; }
     Mod+D       { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+X       { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+Y { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
@@ -275,7 +276,7 @@ binds { // Mod = Super
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Mod+Space       { switch-layout "next"; }  // Keyboard Layout
+    Mod+Ctrl+Space       { switch-layout "next"; }  // Keyboard Layout
 
     INSERT { screenshot; }
     Ctrl+INSERT { screenshot-screen; }

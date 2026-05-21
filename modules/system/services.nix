@@ -9,6 +9,12 @@
 
   };
 
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = false;
+    displayManager.sddm.wayland.enable = false;
+  };
+
   # Enable GNOME Keyring and PAM service (Needed) for login.
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;

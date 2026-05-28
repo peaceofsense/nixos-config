@@ -4,15 +4,13 @@
 
   # Enable the GNOME Desktop Environment.
   services = {
-    desktopManager.gnome.enable = false; # Disable full GNOME
+    desktopManager.gnome.enable = true; # Disable full GNOME
     displayManager.gdm.enable = false;
 
   };
 
   services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = false;
-    displayManager.sddm.wayland.enable = false;
+    desktopManager.plasma6.enable = false;
   };
 
   # Enable GNOME Keyring and PAM service (Needed) for login.

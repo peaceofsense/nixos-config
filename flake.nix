@@ -2,12 +2,12 @@
   description = "yes";
 
   inputs = {
-    nixpkgsStable.url = "nixpkgs/nixos-25.11"; # Change this to update version
+    nixpkgsStable.url = "nixpkgs/nixos-26.05"; # Change this to update version
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgsStable";
     };
     zen-browser = {
@@ -51,10 +51,20 @@
           ./hosts/monolith/configuration.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
           dms.nixosModules.dank-material-shell
-          { nixpkgs.overlays = [ (final: prev: { dgop = pkgsUnstable.dgop; }) ]; } # Needed for DMS
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                dgop           = pkgsUnstable.dgop;
+                quickshell     = pkgsUnstable.quickshell;
+                noctalia-shell = pkgsUnstable.noctalia-shell;
+                vicinae        = pkgsUnstable.vicinae;
+                niri        = pkgsUnstable.niri;
 
+              })
+            ];
+          }
           home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };
@@ -75,20 +85,7 @@
           inherit inputs;
         };
       };
-
     };
-    /*
-    homeConfigurations = {
-      peaceofsense = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          stylix.homeManagerModules.stylix
-          ./home.nix
-          catppuccin.homeModules.catppuccin
-        ];
-      };
-    };
-    */
   };
 
 }

@@ -309,11 +309,11 @@
                 "id": "shortcuts-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "audio-card"
             },
             {
@@ -746,8 +746,8 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": true,
-        "viewMode": "single",
+        "useWallhaven": false,
+        "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "110",
         "wallhavenOrder": "asc",

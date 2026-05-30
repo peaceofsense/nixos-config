@@ -7,17 +7,25 @@ window-rule {
 
 window-rule { // All window opacity
     match is-active=false
-    opacity 0.98
+    opacity 0.85
+    background-effect {
+    blur true
+    }
+
 }
 
 window-rule {
     match app-id=r#"^floating-kitty$"#
     open-floating true
-    opacity 0.97
     default-column-width { fixed 1000; }
     default-window-height { fixed 700; }
 }
 
+window-rule {
+    match app-id="thunar"
+    default-column-width { fixed 1100; }
+    default-window-height { fixed 1200; }
+}
 
 window-rule {
     match app-id="obsidian"

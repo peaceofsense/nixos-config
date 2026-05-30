@@ -6,20 +6,15 @@
     (with pkgsUnstable; [
       # Unstable here
       yazi
-      noctalia-shell
       zed-editor
       hyprland
-      vicinae
-
-
-
 
     ])
 
     ++
 
     (with pkgs; [
-      niri
+     # niri
       xwayland-satellite
       claude-code
       claude-monitor

@@ -119,7 +119,11 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "niri";  # helps portals identify the compositor
+  };
 
   # Default shells
   environment.shells = with pkgs; [bash fish];
@@ -166,18 +170,10 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      #xdg-desktop-portal-hyprland
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
+      # xdg-desktop-portal-wlr
     ];
-    config = {
-        common = {
-          default = [ "gtk" ];
-          #"org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
-          #"org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
-        };
-      };
   };
 
   # Enable automatic garbage collection

@@ -16,8 +16,6 @@
     (with pkgs; [
      # niri
       xwayland-satellite
-      claude-code
-      claude-monitor
 
       # Games
       pysolfc
@@ -65,6 +63,7 @@
 
       # System Utilities
       appimage-run
+      android-tools
       blueman
       brightnessctl
       btop
@@ -76,6 +75,7 @@
       feh
       file-roller
       fish
+      foliate
       font-manager
       fzf
       fprintd
@@ -127,7 +127,7 @@
       swappy
       #swaynotificationcenter
       tealdeer
-      xfce.thunar
+      thunar
       trash-cli
       tree
       unrar
@@ -149,8 +149,8 @@
       banana-cursor
       bibata-cursors
       eyedropper
+      hyfetch
       pipewire
-      neofetch
       nwg-look
       pywal
       starship
@@ -163,13 +163,14 @@
       # Development Tools
       conda
       gcc
-      geany
       git
+      kdePackages.kate
       lua
       luajitPackages.luarocks
       vscodium-fhs
       wtype
       tmux
+      gurobi
 
       # Networking and Communication
       #discord
@@ -210,7 +211,7 @@
       gnome-obfuscate
       nftables
       proton-pass
-      protonvpn-gui
+      proton-vpn
       ente-cli
       ente-auth
       gnupg # Signature and encryption lib
@@ -231,7 +232,7 @@
           # List package dependencies here
       #   ];
       #})
-      wineWowPackages.stable
+      wineWow64Packages.stable
       winetricks
   ]);
 

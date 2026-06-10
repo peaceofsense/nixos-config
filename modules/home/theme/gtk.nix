@@ -25,6 +25,7 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;  # int, not string
     };
+    gtk4.theme = null;
 
     # gtk4.extraConfig has limited effect; libadwaita reads dconf instead
   };
@@ -54,6 +55,7 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
     };
   };
 }

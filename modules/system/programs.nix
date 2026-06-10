@@ -13,9 +13,6 @@
 
   programs.niri.enable = true;
 
-  # Enable adb (Android Debug Bridge)
-  programs.adb.enable = true;
-
   # Install programs
   programs.firefox.enable = true;
 

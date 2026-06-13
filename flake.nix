@@ -57,8 +57,7 @@
                 dgop           = pkgsUnstable.dgop;
                 quickshell     = pkgsUnstable.quickshell;
                 noctalia-shell = pkgsUnstable.noctalia-shell;
-                vicinae        = pkgsUnstable.vicinae;
-                niri        = pkgsUnstable.niri;
+              #  niri        = pkgsUnstable.niri;
 
               })
             ];

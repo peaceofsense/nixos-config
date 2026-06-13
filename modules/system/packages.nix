@@ -14,7 +14,7 @@
     ++
 
     (with pkgs; [
-     # niri
+      niri
       xwayland-satellite
 
       # Games

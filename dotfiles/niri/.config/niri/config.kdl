@@ -67,10 +67,10 @@ layer-rule {
 }
 
 blur {
-   passes 2        // more passes = stronger blur (default: 3)
-   offset 4.0      // sample distance per pass (default: 3.0)
+   passes 4        // more passes = stronger blur (default: 3)
+   offset 5.0      // sample distance per pass (default: 3.0)
    noise 0.01      // grain overlay (default: 0.02)
-   saturation 1.50 // color saturation boost (default: 1.5)
+   saturation 2 // color saturation boost (default: 1.5)
 }
 
 layout {

@@ -57,7 +57,4 @@
 
   programs.evince.enable = true; # PDF thumbnail
 
-  programs.dank-material-shell = {
-    enable = true;
-  };
 }

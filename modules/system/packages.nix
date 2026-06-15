@@ -14,7 +14,11 @@
     ++
 
     (with pkgs; [
+      dgop
+      dms-shell
+      quickshell
       niri
+      matugen
       xwayland-satellite
 
       # Games
@@ -110,6 +114,7 @@
       networkmanager
       nix-search-tv
       ocrmypdf
+      ollama
       overskride
       pamixer
       parted

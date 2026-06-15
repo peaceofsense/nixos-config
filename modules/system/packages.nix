@@ -72,6 +72,7 @@
       brightnessctl
       btop
       cava
+      chatbox
       dconf
       ddcutil
       ddcui
@@ -114,7 +115,6 @@
       networkmanager
       nix-search-tv
       ocrmypdf
-      ollama
       overskride
       pamixer
       parted

@@ -305,5 +305,3 @@ include "env.kdl"
 include "startup.kdl"
 
 include "dms/cursor.kdl"
-
-include "dms/outputs.kdl"

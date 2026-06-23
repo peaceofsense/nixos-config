@@ -94,9 +94,6 @@
             sudo ddcutil --display 1 setvcp 10
         end
 
-        function snek
-            /home/peaceofsense/.conda/envs/snek/bin/python $argv
-        end
 
         function y
             set tmp (mktemp -t "yazi-cwd.XXXXXX")

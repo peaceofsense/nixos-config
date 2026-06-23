@@ -76,6 +76,7 @@
       dconf
       ddcutil
       ddcui
+      docker-compose
       fastfetch
       feh
       file-roller

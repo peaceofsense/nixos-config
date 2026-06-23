@@ -65,8 +65,8 @@
 
   networking.networkmanager = {
     enable = true;
-
-    wifi.scanRandMacAddress = true;  # random MAC while scanning
+    wifi.scanRandMacAddress = true;
+    plugins = [ pkgs.networkmanager-openvpn ];
   };
 
   # Force random MAC for connections
@@ -89,9 +89,11 @@
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 53317 ]; # 3389 18080 37889 18089]; 53317 - LocalSend
-  networking.firewall.allowedUDPPorts = [ 53317 ];
-  # networking.firewall.allowedUDPPorts = pkgs.lib.range 1714 1764; # Full KDE Connect range
+  networking.firewall.trustedInterfaces = [ "tun0" "wg0" ];
+  networking.firewall.allowedTCPPorts = [ 53317 ]; #  53317 - LocalSend
+  networking.firewall.allowedUDPPorts = [ 53317 51820 ]; # 51820 for eduVPN
+  networking.firewall.checkReversePath = "loose";
+
 
   # Hardware Configuration
   hardware.bluetooth.enable = true;
@@ -148,7 +150,7 @@
   virtualisation.libvirtd.enable = false;
 
   virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.docker.enable = false;
+  virtualisation.docker.enable = true;
 
 
   # Configure console keymap

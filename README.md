@@ -90,7 +90,7 @@ nix flake update
    ```
 3. Rebuild: `sudo nixos-rebuild switch --flake .#<hostname>`
 
-### Stow all file (Make sure folders are already structured properly to target `~/.config/`)
+### Stow all files (Make sure folders are already structured properly to target `~/.config/`)
 
 ```bash
 stow -v *

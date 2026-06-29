@@ -1,6 +1,6 @@
 # Use your harware-configuration.nix
 
-{ config, pkgs, pkgsUnstable, ... }:
+{ config, pkgs, pkgsUnstable, lib, ... }:
 
 {
   imports =
@@ -172,10 +172,15 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
-      # xdg-desktop-portal-wlr
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
     ];
+    config = {
+      common.default = "gtk";
+      gnome.default = "gnome;gtk";
+      niri.default = lib.mkForce "gtk;wlr";
+    };
   };
 
   # Enable automatic garbage collection

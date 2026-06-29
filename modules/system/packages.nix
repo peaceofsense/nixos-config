@@ -68,6 +68,7 @@
       # System Utilities
       appimage-run
       android-tools
+      auto-cpufreq
       blueman
       brightnessctl
       btop
